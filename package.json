@@ -1,0 +1,37 @@
+{
+  "name": "react_redax",
+  "version": "1.0.0",
+  "description": "My_project",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikeStark/React-Redax.git"
+  },
+  "author": "Aliaksandr_Kazutsin <kazutin.1993@mail.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikeStark/React-Redax/issues"
+  },
+  "homepage": "https://github.com/NikeStark/React-Redax#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-classes": "^7.8.3",
+    "@babel/plugin-transform-template-literals": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "file-loader": "^5.0.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
