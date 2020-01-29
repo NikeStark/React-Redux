@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //the same like import only for node
+
 module.exports = { // empty configuration the same like export node.js
     mode: "development", // or production
 
@@ -6,11 +8,8 @@ module.exports = { // empty configuration the same like export node.js
             {
                 test: /\.js$/,
                 exclude: /node_modules/, // isn't passing through node_modules
-                use: [
-                    {
-                        loader: 'babel-loader'
-                    }
-                ]
+                loader: 'babel-loader' //if loader is one we can not use -use- for this.. shortcut
+                
             },
             // Loading images
             {
@@ -37,7 +36,30 @@ module.exports = { // empty configuration the same like export node.js
                         }  
                     }
                 ] 
+            },
+            //Loading CSS
+            {
+                test: /\.(css)$/,
+                use: ['style-loader', 'css-loader'] //we can use this record instade of -loader- shortcut 
+            },
+            //Loading SASS/SCSS
+            {
+                test: /\.(s[ca]ss)$/, //one of them letter
+                use: [
+                    {loader: 'style-loader'}, //scope loaders
+                    {loader: 'css-loader'}, //from this file to another file which above second loader
+                    //works as function in react 'compose' from starting it'll be css-loader then next
+                    //if we exchange files on the contrary it'll be mistake
+                    {loader: 'sass-loader'} //do it first and give away another loader above
+                ]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({ //in order to work with our index.html
+            title: 'Hello World', //in order to exchange title in html-file
+            buildTime: new Date().toDateString(),
+            template: 'public/index.html'
+        })
+    ]
 };

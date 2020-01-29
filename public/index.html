@@ -2,11 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Hello World</title>
+        <title><%= htmlWebpackPlugin.options.title %></title>
     </head>
     <body>
-        <div>Wed Jan 29 2020</div>
+        Built at:
+        <div><%= htmlWebpackPlugin.options.buildTime %></div>
         <div id="root"></div>
         <!--<script src="dist/main.js"></script> plugin smart enough for this--> 
-    <script type="text/javascript" src="main.js"></script></body>
+    </body>
 </html>
